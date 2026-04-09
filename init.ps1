@@ -1,0 +1,1 @@
+npm create next-app@latest drama-talk -- --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm --yes

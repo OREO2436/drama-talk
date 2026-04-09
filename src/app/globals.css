@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+  --primary: #ff2442; /* 小红书红 */
+  --primary-hover: #e01b36;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --border: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --foreground: #f8fafc;
+    --primary: #ff2442;
+    --primary-hover: #e01b36;
+    --card: #1e1e1e;
+    --card-foreground: #f1f5f9;
+    --border: #2a2a2a;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Movie/Cinematic Vibe overrides */
+.cinematic-shadow {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .cinematic-shadow {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+  .card-hover:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+}
+
+/* 瀑布流布局支持 */
+.masonry-grid {
+  display: flex;
+  margin-left: -16px; /* gutter size offset */
+  width: auto;
+}
+.masonry-grid_column {
+  padding-left: 16px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* 隐藏滚动条但允许滚动 */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
